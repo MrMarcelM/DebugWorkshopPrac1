@@ -28,14 +28,14 @@ namespace debugws
 
     private static int Partition(int[] arr, int left, int right)
     {
-      int pivot = arr[left];
+      int pivot = arr[right];
 
       while (true)
       {
 
         while (arr[left] < pivot)
         {
-          left += 2;
+          left++;
         }
 
         while (arr[right] > pivot)
@@ -51,8 +51,8 @@ namespace debugws
           }
 
           int temp = arr[left];
-          arr[right] = temp;
           arr[left] = arr[right];
+          arr[right] = temp;
         }
         else
         {
